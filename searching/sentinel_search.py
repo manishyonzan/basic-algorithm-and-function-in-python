@@ -6,6 +6,7 @@ def sentinel_search(arr,length_of_array,value):
     arr[length_of_array-1] = value
     while (arr[index] != value):
         index +=1
+    arr[length_of_array - 1] = last
     if (index<(length_of_array-1)):
         return index
     else:
@@ -21,4 +22,4 @@ if (return_value ==-1):
 else:
     print(f"value found at array index {return_value}")
     
-        
+print(array_to_search)   
