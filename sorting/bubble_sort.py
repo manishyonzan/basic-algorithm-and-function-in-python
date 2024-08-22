@@ -9,7 +9,7 @@ def bubble_sort(arr):
                 
     return arr
 
-arrayto = [1,6,5]
+arrayto = [1,6,5,7,8,9,11,2]
 
 a = bubble_sort(arrayto)
 
