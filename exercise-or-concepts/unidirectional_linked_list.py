@@ -35,6 +35,11 @@ class LinkedList:
         new_node.next = p.next
         p.next = new_node
         
+    # def remove(self,pos):
+    #     p = self.__head
+    #     i = 0
+    #     while p.next != None and i < pos:
+            
             
         
     def output(self,node):
