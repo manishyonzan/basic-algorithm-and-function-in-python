@@ -26,10 +26,14 @@ class LinkedList:
         self.__tail.next = new_node
         self.__tail = new_node
         
-    # def insert(self,pos,new_node):
-    #     p = self.__head
-    #     for i in range(1,pos):
-    #         p = p.next
+    def insert(self,pos,new_node):
+        p = self.__head
+        i = 0
+        while p.next != None and i < pos-1:
+            p = p.next
+            i+=1
+        new_node.next = p.next
+        p.next = new_node
         
             
         
@@ -48,6 +52,7 @@ def main():
     linkedlist = LinkedList()
     head = linkedlist.init()
     linkedlist.add(Node("fifthNode",None))
+    linkedlist.insert(2,Node("addedNode",None))
     linkedlist.output(head)
     
 if __name__=="__main__":
