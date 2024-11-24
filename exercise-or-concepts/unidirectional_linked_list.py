@@ -35,11 +35,16 @@ class LinkedList:
         new_node.next = p.next
         p.next = new_node
         
-    # def remove(self,pos):
-    #     p = self.__head
-    #     i = 0
-    #     while p.next != None and i < pos:
-            
+    def remove(self,pos):
+        p = self.__head
+        i = 0
+        remove_node = p.next
+        while (p.next != None and i < pos):
+            p = p.next
+            remove_node = p.next
+            i+=1
+        p.next = remove_node.next
+        
             
         
     def output(self,node):
@@ -57,7 +62,8 @@ def main():
     linkedlist = LinkedList()
     head = linkedlist.init()
     linkedlist.add(Node("fifthNode",None))
-    linkedlist.insert(2,Node("addedNode",None))
+    # linkedlist.insert(2,Node("addedNode",None))
+    linkedlist.remove(1)
     linkedlist.output(head)
     
 if __name__=="__main__":
