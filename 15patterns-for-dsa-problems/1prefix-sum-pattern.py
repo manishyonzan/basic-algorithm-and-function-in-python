@@ -112,3 +112,11 @@ print(find_max_length([0,1,1,0,0,0,1,0]))
 # Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
 
 # A subarray is a contiguous non-empty sequence of elements within an array.
+
+
+def subarraySum(nums, k):
+    
+    hash_map = {0:-1}
+    
+    for i in range(0,len(nums)):
+        pass   
