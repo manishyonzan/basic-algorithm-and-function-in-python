@@ -116,7 +116,20 @@ print(find_max_length([0,1,1,0,0,0,1,0]))
 
 def subarraySum(nums, k):
     
-    hash_map = {0:-1}
+    hash_map = {0:1}
+    prefix_sum = [0] * len(nums)
+    ans = 0
+    for i in range(0,len(nums)):
+        prefix_sum[i] =  nums[0] if i ==0 else nums[i] + prefix_sum[i - 1]
     
     for i in range(0,len(nums)):
-        pass   
+        if prefix_sum[i] - k in hash_map:
+            ans += hash_map[prefix_sum[i]]
+            
+        hash_map[prefix_sum[i]] = 1 + hash_map.get(prefix_sum[i], 0)
+    return hash_map,prefix_sum
+
+
+print(subarraySum([1,2,3,4,5],9))
+    
+    
