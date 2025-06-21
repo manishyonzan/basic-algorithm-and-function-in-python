@@ -53,3 +53,58 @@ def twoSum(numbers,target):
 
 
 
+
+
+
+# leetcode 15 : 3 sum
+
+# Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+# Notice that the solution set must not contain duplicate triplets.
+
+
+class Solution():
+    def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        nums.sort()
+        
+        if len(nums) < 3:
+            return []
+        
+        answer = []
+        
+        for left in range(0,len(nums)):
+            if left > 0 and nums[left] == nums[left - 1]:
+                continue
+            
+            if nums[left] > 0:
+                #no point in searching if the first element is greater than 0 in sorted array to find sum as 0
+                break
+            
+            middle = left + 1
+            right = len(nums) - 1
+            
+            while middle < right:
+                total = nums[left] + nums[middle] + nums[right]
+                
+                if total > 0:
+                    right -=1
+                elif total < 0:
+                    middle += 1
+                else:
+                    answer.append([nums[left],nums[middle], nums[right]])
+                    middle +=1
+                    while nums[middle] == nums[middle - 1] and middle < right:
+                        middle += 1
+        return answer
+        
+        
+                
+check = Solution()
+print(check.threeSum([-1,0,1,2,-1,-4]))
+# def check(x):
+#     return tuple(set(x))
+
+# print(check(((1,2,3), (1,2,3))))
