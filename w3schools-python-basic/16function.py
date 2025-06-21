@@ -137,3 +137,12 @@ print("Recursion Example Results:")
 tri_recursion(6)
 
 
+
+# hashable -> list are hashable so they need to be converted to tuple before making same value for comparison in set
+
+def check_set(x):
+    return set(tuple(i) for i in x)
+
+
+print(check_set([[1,2,3], [1,2,3]]))
+
