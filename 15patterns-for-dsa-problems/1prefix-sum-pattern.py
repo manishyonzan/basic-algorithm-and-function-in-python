@@ -135,3 +135,5 @@ def subarraySum(nums, k):
 print("the subarray :",subarraySum([1,2,3,4,5],9))
     
     
+    
+    
