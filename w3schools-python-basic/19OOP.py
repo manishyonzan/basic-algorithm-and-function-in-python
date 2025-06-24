@@ -69,4 +69,60 @@ del p1.name
 
 del p1
 
-p1.my_func()  #NameError: name 'p1' is not defined
+# p1.my_func()  #NameError: name 'p1' is not defined
+
+
+
+
+# What are Magic Methods?
+# Magic methods in Python are special methods that start and end with double underscores (__).
+# When you use certain operations or functions on your objects, Python automatically calls these methods.
+
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + self.y)
+    
+    def __str__(self):
+        return f"{self.x},{self.y}"
+    
+p1 = Point(1,1)
+p2 = Point(2,2)
+
+p3 = p1 + p2
+print(p3.x, p3.y) #3 2
+
+print(p3)  # 3, 2
+print(str(p3))  # 3, 2
+
+
+
+# __str__ returns a user-friendly string showing the temperature with a degree symbol
+
+# __repr__ returns a string that shows how to create the object, which is useful for debugging
+
+class Temperature:
+    def __init__(self,celsius):
+        self.celsius = celsius
+    
+    def __str__(self):
+        return f"{self.celsius}°c"
+    
+    def __repr__(self):
+        return f"Temperature({self.celsius})"
+    
+temp = Temperature(25)
+print(str(temp))
+print(repr(temp))
+
+
+
+        
+
+
+
+
