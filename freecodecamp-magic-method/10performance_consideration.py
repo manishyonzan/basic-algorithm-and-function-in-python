@@ -88,3 +88,46 @@ class ComplexContainer:
         if self.access_count > 100:
             raise RuntimeError("Too many accesses")
         return self.items[index]
+    
+    
+# 4. Document Behavior
+# Clearly document how your magic methods behave, especially if they deviate from standard expectations:
+
+class CustomDict(dict):
+    def __missing__(self, key):
+        """
+        Called when a key is not found in the dictionary.
+        Creates a new list for the key and returns it.
+        This allows for automatic list creation when accessing
+        non-existent keys.
+        """
+        self[key] = []
+        return self[key]
+    
+    
+# 5. Consider Performance
+# Be aware of the performance implications, especially for frequently called methods:
+
+class OptimizedContainer:
+    __slots__ = ['items']  # Use __slots__ for better performance
+
+    def __init__(self):
+        self.items = []
+
+    def __getitem__(self, index):
+        return self.items[index]  # Direct access is faster
+    
+    
+# 6. Handle Edge Cases
+# Always consider edge cases and handle them appropriately:
+
+class SafeContainer:
+    def __getitem__(self, key):
+        if not isinstance(key, (int, slice)):
+            raise TypeError("Index must be integer or slice")
+        if key < 0:
+            raise ValueError("Index cannot be negative")
+        # ... rest of the implementation
+        
+        
+    
