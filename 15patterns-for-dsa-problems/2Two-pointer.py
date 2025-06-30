@@ -113,23 +113,26 @@ print(check.threeSum([-1,0,1,2,-1,-4]))
 
 # 11 container with most water
 
-# class Solution(object):
-#     def maxArea(self, height):
-#         """
-#         :type height: List[int]
-#         :rtype: int
-#         """
-#         left = {
-#             "position" : 1,
-#             "height":height[0]
-#         }
-#         right = {
-#             "position" : len(height),
-#             "height": height[len(height)-1]
-#         } 
-        
-#         height_of_container = left["height"] if left["height"] < right["height"] else right["height"]
-#         volume = height_of_container * (right["position"] -1)
-#         while left["position"] < right["position"]:
-#             next_volume = 
+class Solution(object):
+    def maxArea(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        left = 0
+        right = len(height) - 1
+        volume = 0
+        height_container = 0
+        while left < right:
+            height_container = height[left] if height[left] < height[right] else height[right]
             
+            new_volume = (right - left) * height_container
+            
+            if new_volume > volume:
+                volume = new_volume
+            
+            if height[right] >= height[left]:
+                left += 1
+            else:
+                right -= 1
+                
