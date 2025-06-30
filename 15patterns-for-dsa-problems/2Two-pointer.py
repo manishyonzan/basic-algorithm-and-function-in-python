@@ -124,7 +124,7 @@ class Solution(object):
         volume = 0
         height_container = 0
         while left < right:
-            height_container = height[left] if height[left] < height[right] else height[right]
+            height_container = height[right] if height[right] < height[left] else height[left]
             
             new_volume = (right - left) * height_container
             
@@ -136,3 +136,29 @@ class Solution(object):
             else:
                 right -= 1
                 
+        return volume
+                
+                
+# solution of other person
+        
+# class Solution:
+#     def maxArea(self, height: List[int]) -> int:
+#         max_area = 0
+#         left = 0
+#         right = len(height) - 1
+
+#         while left < right:
+#             max_area = max(max_area, (right - left) * min(height[left], height[right]))
+
+#             if height[left] < height[right]:
+#                 left += 1
+#             else:
+#                 right -= 1
+        
+#         return max_area
+    
+    
+a = Solution()
+b = a.maxArea([1,1])
+
+print(b)
