@@ -69,3 +69,32 @@ class Solution(object):
 a = Solution()
 m = a.lengthOfLongestSubstring("abcdabc")
 print(m)
+
+
+
+# 76. Minimum Window Substring
+# Given two strings s and t of lengths m and n respectively,
+# return the minimum window substring of s such that every character in t (including duplicates) is included in the window. 
+# If there is no such substring, return the empty string "".
+
+
+
+class Solution(object):
+    def minWindow(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: str
+        """
+        if len(s) < 1 or len(t) < 1 or len(t) > len(s):
+            return ""
+        start = 0
+        minwindow = ""
+        for i in range(0, len(s) - len(t)):
+            pass
+
+            
+            
+        
+
+a = Solution()
