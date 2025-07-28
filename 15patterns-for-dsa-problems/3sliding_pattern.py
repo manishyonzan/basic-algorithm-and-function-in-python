@@ -91,6 +91,7 @@ class Solution(object):
         start = 0
         minwindow = ""
         for i in range(0, len(s) - len(t)):
+            
             pass
 
             
