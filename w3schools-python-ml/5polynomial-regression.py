@@ -36,5 +36,5 @@ plt.show()
 
 
 # check how well the data fits in a polynomial regression
-# it gives values from 0-1 as percentage
+
 print(r2_score(y, mymodel(x)))
