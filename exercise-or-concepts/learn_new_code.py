@@ -20,9 +20,36 @@ enemies = [
 ]
 
 if any([enemy["health"] for enemy in enemies]):
-    print("there is enemies is remaining and batte is not over")
+    print("There is enemies is remaining and batte is not over")
 else:
-    print("enemy has 0 health and battle is over")
+    print("Enemy has 0 health and battle is over")
+
+
+
+# lets change the health to 0
+enemies = [
+    {
+        "type":"Orc",
+        'health':0
+    },
+    {
+        "type":"Orc",
+        'health':0
+    },
+    {
+        "type":"Orc",
+        'health':0
+    },
+    {
+        "type":"Orc",
+        'health':0
+    },
+]
+
+if any([enemy["health"] for enemy in enemies]):
+    print("There is enemies is remaining and batte is not over")
+else:
+    print("Enemy has 0 health and battle is over")
 
 
 
@@ -31,5 +58,5 @@ else:
 if any([False]):
     print("There is truthy value in the array")
 else:
-    print("there is no truthy value in there")
+    print("There is no truthy value in there")
     
