@@ -54,9 +54,41 @@ else:
 
 
 
-# the any will take a array and return true, if the array has atleast one truthy value in there
+# the any will take iterable and return true, if the it has atleast one truthy value in there
 if any([False]):
     print("There is truthy value in the array")
 else:
     print("There is no truthy value in there")
     
+    
+    
+    
+"""                                mutable args and ummutable args                                                      """
+
+def mutable(arg):
+    """ Highlights that list, set and dict types are mutable """
+    if isinstance(arg,list):
+        arg.append("Your list was modified by mutable function")
+    if isinstance(arg,set):
+        arg.add("Your set was modified by mutable function")
+    if isinstance(arg,dict):
+        arg["added"] = "Your list was modified by mutable function"
+
+def immutable(arg):
+    if isinstance(arg, float) or isinstance(arg, int):
+        arg+=1
+    if isinstance(arg,str):
+        arg+="this will not affect your str"
+
+def check_mutable_immutable():
+    # in python list, set and dict are mutable
+    for item in [[1,2], {2,3}, {"key":"value"}]:
+        mutable(item)
+        print(item)    
+        
+    for item in [0.0, 1, 'just a string']:
+        immutable(item)
+        print(item)
+        
+print("mutable and immutable")
+check_mutable_immutable()
