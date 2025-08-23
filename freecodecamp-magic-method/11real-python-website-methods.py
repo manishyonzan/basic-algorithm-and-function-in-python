@@ -50,12 +50,42 @@ class Pizza:
     @classmethod
     def margherita(cls):
         return cls(['mozzarella', 'tomato'])
+    
+    @classmethod
+    def peperoni(cls):
+        return  cls(['mozzarella', 'tomato', 'pepperoni'])
     @staticmethod
     def validate_ingredient(ingredient):
         return ingredient in ['mozzarella', 'tomato', 'basil']
+    @staticmethod
+    def calculate_price(size, num_toppings):
+        base_price = {'small': 8, 'medium': 10, 'large': 12}
+        return base_price[size] + num_toppings * 1.5
 
 
 a  = Pizza.margherita()
 a.add_ingredient('spice')
 print(a.__repr__())
+
+# Usage of static method
+price = Pizza.calculate_price('medium', 3)
+print(price)  # Output: 14.5
+
+# add which ever value is available and not
+
+profile = {
+    'name':"N\A",
+    'email' : "N\A",
+    'phone':"N\A"
+}
+
+user = {
+    'name':"bob",
+    'phone':"9845433221"
+}
+
+profile |= user # only from python 3.9
+# profile.update(user)
+# profile = {**profile, ** user}
+print(profile)
 
