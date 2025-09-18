@@ -1,3 +1,9 @@
+# pseudo code
+# 1 work from left to right
+# 2 examine each item and compare its item to left
+# insert the item into correct position  in its array
+
+
 def insertion_sort(arr):
     for i in range(1,len(arr)):
         j = i
