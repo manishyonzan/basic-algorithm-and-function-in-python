@@ -22,6 +22,8 @@ def initialize_parameters(layer_dims):
 
 def sigmoid(Z):
    return 1 / (1 + np.exp(-Z))
+
+
 def forward_propagation(X, parameters):
     caches = []
     A = X
