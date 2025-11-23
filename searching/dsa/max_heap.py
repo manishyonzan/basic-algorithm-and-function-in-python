@@ -1,3 +1,10 @@
+# value of item <= value of parent
+# value of item >= value of children
+
+
+
+
+
 def insert(heap, value):
     # Add the new element to the end of the heap
     heap.append(value)
