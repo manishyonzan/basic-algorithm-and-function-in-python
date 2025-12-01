@@ -45,8 +45,9 @@ def insert(node:TreeNode,data):
     return node
         
     
-node1 = balanced_bst([1,2,3,4,5,7])
+node1 = balanced_bst([1,4,5,7,8,9,10])
 
-insert(node1, 6)
+insert(node1, 3)
+insert(node1, 2)
 
 print(inorderTraversal(node1))
