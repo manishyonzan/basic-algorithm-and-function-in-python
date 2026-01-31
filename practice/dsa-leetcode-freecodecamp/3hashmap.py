@@ -1,0 +1,3 @@
+# how does hashfunction store data: for a key it will calculate number that is available in memory 
+# and points to it and the value is save in that memory so hash function is faster or 0(1) in insert and lookup it itself has the memory location
+# the key must be hashable , in general numbers, letters are hashable not the array, dictionary because its content change and the hash function needs same value
