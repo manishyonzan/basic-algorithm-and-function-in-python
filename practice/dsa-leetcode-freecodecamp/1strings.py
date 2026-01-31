@@ -1,3 +1,5 @@
+# https://www.youtube.com/watch?v=Z_c4byLrNBU
+
 chars = ["a","b", "c", "d", "e"]
 result = ""
 for char in chars:
