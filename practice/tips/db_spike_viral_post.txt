@@ -1,0 +1,15 @@
+problem: 
+Classic hot-row problem.
+One row is updated thousands of times per second (eg - likes in viral posts in X).
+DB CPU spikes.
+
+possible solution.
+
+When one row gets updated thousands of times/sec, DB spends more time on locks than actual work → CPU spikes.
+Fix isn’t “scale DB”, it’s reduce write contention.
+What I’ve seen work well:
+- Buffer likes in Redis / in-memory counter
+- Batch update DB every few seconds
+- Use event queue (Kafka / RabbitMQ) for async aggregation
+- Shard counters (multiple rows → sum later)
+- Or even eventual consistency for UI counts
