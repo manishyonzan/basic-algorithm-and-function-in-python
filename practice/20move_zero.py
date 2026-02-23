@@ -1,0 +1,1 @@
+# from the list of  array move the zero to last and nonzero to front with order intact
